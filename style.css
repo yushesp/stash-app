@@ -1,0 +1,56 @@
+/* Stash site. Tokens follow the app's Theme.swift. Bricolage Grotesque is under the SIL Open Font License. */
+@font-face { font-family: "Bricolage Display"; src: url("/stash-app/fonts/Bricolage-Display.ttf") format("truetype"); font-display: swap; }
+@font-face { font-family: "Bricolage"; src: url("/stash-app/fonts/Bricolage-Regular.ttf") format("truetype"); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Bricolage"; src: url("/stash-app/fonts/Bricolage-Bold.ttf") format("truetype"); font-weight: 700; font-display: swap; }
+
+:root {
+  --bg: #FBF7EF; --card: #FFFFFF; --ink: #2A1F2D; --muted: #6A5E68; --rule: #EADFCF;
+  --blue: #3255A4; --blue-deep: #2C4A94; --sun: #FFB511; --cream: #FBF7EF;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #1C151E; --card: #261D29; --ink: #F4ECDA; --muted: #B9ACB6; --rule: #43354A; --blue: #7D9BE8; color-scheme: dark; }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font: 17px/1.6 "Bricolage", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--blue); }
+.wrap { max-width: 44rem; margin: 0 auto; padding: 2.5rem max(1.25rem, env(safe-area-inset-left)) 4rem; }
+header.site { display: flex; align-items: center; gap: .75rem; margin-bottom: 2.5rem; }
+header.site img { width: 44px; height: 33px; border-radius: 8px; }
+header.site a { font: 700 1.25rem "Bricolage", sans-serif; color: var(--ink); text-decoration: none; }
+nav { margin-left: auto; display: flex; gap: 1.1rem; font-size: .95rem; }
+nav a { color: var(--muted); text-decoration: none; }
+nav a:hover, nav a[aria-current] { color: var(--ink); }
+h1, h2 { font-family: "Bricolage Display", "Bricolage", sans-serif; line-height: 1.1; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(2.2rem, 7vw, 3.4rem); letter-spacing: -.02em; margin-bottom: 1rem; }
+h2 { font-size: 1.45rem; margin: 2.4rem 0 .6rem; }
+p, li { max-width: 65ch; }
+ul { padding-left: 1.2rem; }
+.lede { font-size: 1.15rem; color: var(--muted); margin-top: 0; }
+.date { color: var(--muted); font-size: .95rem; }
+footer { border-top: 1px solid var(--rule); margin-top: 3.5rem; padding-top: 1.25rem; color: var(--muted); font-size: .9rem; display: flex; flex-wrap: wrap; gap: 1rem; }
+footer a { color: var(--muted); }
+
+/* Home */
+.hero { background: linear-gradient(#4467BA, #2C4A94); color: var(--cream); }
+.hero .wrap { padding-bottom: 3.5rem; }
+.hero header.site a, .hero nav a { color: var(--cream); }
+.hero nav a { opacity: .8; }
+.hero h1 { color: var(--cream); max-width: 14ch; }
+.hero .lede { color: #DCE3F5; }
+.hero img.art { width: 100%; border-radius: 18px; margin-top: 1.5rem; display: block; }
+.steps { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); margin-top: 1rem; }
+.step { background: var(--card); border: 1px solid var(--rule); border-radius: 18px; padding: 1.1rem 1.2rem; }
+.step b { display: block; font-size: 1.05rem; margin-bottom: .2rem; }
+.step span { color: var(--muted); font-size: .97rem; }
+
+/* Stash: a square icon, and a plan list on the home page. */
+header.site img { width: 36px; height: 36px; border-radius: 9px; }
+.hero img.mark { width: 96px; height: 96px; border-radius: 22px; display: block; margin-bottom: 1.25rem; box-shadow: 0 8px 24px rgb(0 0 0 / .18); }
+.plans { list-style: none; padding: 0; display: grid; gap: .5rem; }
+.plans li { background: var(--card); border: 1px solid var(--rule); border-radius: 14px; padding: .7rem 1rem; display: flex; justify-content: space-between; gap: 1rem; }
+.plans li span { color: var(--muted); }
