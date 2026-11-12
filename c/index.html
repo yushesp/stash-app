@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>You found a Stash | Stash</title>
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<link rel="icon" href="/stash-app/favicon.png"><link rel="apple-touch-icon" href="/stash-app/favicon.png">
+<link rel="stylesheet" href="/stash-app/style.css">
+<style>
+  .found { min-height: 100svh; display: grid; align-content: center; gap: 1.1rem; text-align: center; justify-items: center; }
+  .found h1 { margin: 0; }
+  .found .lede { margin: 0 auto; max-width: 30ch; }
+  .env { width: 132px; height: 120px; position: relative; margin-bottom: .5rem; }
+  .env .bill { position: absolute; left: 30px; width: 72px; height: 40px; border-radius: 6px; background: var(--sun); top: -6px; animation: drop 900ms cubic-bezier(.3,.7,.2,1) 200ms both; }
+  .env .body { position: absolute; inset: 40px 0 0; border-radius: 14px; background: var(--card); border: 3px solid var(--blue); }
+  .env .body::after { content: ""; position: absolute; left: 8px; right: 8px; top: 6px; height: 34px; border: 3px solid var(--blue); border-top: 0; border-left-color: transparent; border-right-color: transparent; border-radius: 0 0 50% 50%; }
+  @keyframes drop { from { transform: translateY(-70px); opacity: 0; } to { transform: translateY(14px); opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .env .bill { animation: none; transform: translateY(14px); } }
+  .claim { display: inline-block; background: var(--blue); color: #fff; font: 700 1.1rem "Bricolage", sans-serif; text-decoration: none; padding: .95rem 1.6rem; border-radius: 999px; min-width: 15rem; }
+  .claim:focus-visible { outline: 3px solid var(--sun); outline-offset: 3px; }
+  .small { color: var(--muted); font-size: .92rem; max-width: 32ch; margin: 0 auto; }
+  [hidden] { display: none !important; }
+</style>
+</head><body>
+<main class="wrap found">
+  <div class="env" aria-hidden="true"><div class="bill"></div><div class="body"></div></div>
+  <div id="ok">
+    <h1>You found a Stash.</h1>
+    <p class="lede">It's yours: Stash Plus, free for life.</p>
+    <p style="margin:1.4rem 0 .9rem"><a class="claim" id="claim" href="#">Claim free Plus</a></p>
+    <p class="small">The App Store opens and shows the offer. Each code works once, so the first person to claim it gets it.</p>
+  </div>
+  <div id="bad" hidden>
+    <h1>This link is missing its code.</h1>
+    <p class="lede">Scan the code on the back of the piece again.</p>
+  </div>
+  <p class="small"><a href="/stash-app/">What is Stash?</a></p>
+</main>
+<script>
+  // The code lives after the #, so it never reaches a server.
+  var code = decodeURIComponent(location.hash.slice(1)).trim().toUpperCase();
+  if (/^[A-Z0-9]{8,24}$/.test(code)) {
+    document.getElementById('claim').href = 'https://apps.apple.com/redeem?ctx=offercodes&id=6824625025&code=' + code;
+  } else {
+    document.getElementById('ok').hidden = true;
+    document.getElementById('bad').hidden = false;
+  }
+</script>
+</body></html>
