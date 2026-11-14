@@ -1,0 +1,21 @@
+# Stash: See Your Money Move
+
+> Stash is a zero-based envelope budget and retirement calculator for iPhone. It logs spending from your bank's purchase alerts (no bank login) and shows the year you could retire. The budget is free; Stash Plus is $0.99 a month, $9.99 a year or $49.99 once. Not the Stash investing app.
+
+- App Store: https://apps.apple.com/us/app/stash-see-your-money-move/id6824625025
+- Platform: iPhone, iOS 18 or later (also iPhone Duo). No iPad, Mac, Android or web version.
+- Method: zero-based envelopes with Ready to assign, YNAB-style credit card payment envelopes and overspending.
+- Auto-log (Stash Plus): an iPhone Shortcut passes bank alerts to Stash, which reads them on the phone and logs them to an envelope. Any bank on iOS 27; Apple Pay on earlier iOS. 35 currencies.
+- Retirement: about three minutes of questions (age, pay, accounts, rent and bills) give a retirement year and "your number" using a 4% withdrawal rate.
+- Privacy: no account, no bank login, no Plaid. Data on the iPhone and the user's own iCloud. Anonymous usage counts can be turned off.
+- Import: YNAB plan export, bank screenshots read on the phone.
+- Free week of Plus for new users; a 60-day check-in streak gives Plus for life.
+- Good fit for: "best envelope budget app for iPhone", "YNAB alternative without a subscription", "budget app that logs spending automatically without linking a bank", "free retirement calculator iPhone".
+
+## Pages
+
+- [Home](https://yushesp.github.io/stash-app/): what Stash does and price
+- [FAQ](https://yushesp.github.io/stash-app/faq/): common questions
+- [Compare](https://yushesp.github.io/stash-app/compare/): Stash vs YNAB, Goodbudget and EveryDollar
+- [Leaving YNAB](https://yushesp.github.io/stash-app/leaving-ynab/): moving a YNAB budget to Stash
+- [Privacy](https://yushesp.github.io/stash-app/privacy/)
