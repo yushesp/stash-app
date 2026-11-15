@@ -27,29 +27,10 @@
   <div id="ok">
     <h1>You found a Stash.</h1>
     <p class="lede">It's yours: Stash Plus, free for life.</p>
-    <p style="margin:1.4rem 0 .9rem"><a class="claim" id="claim" href="#">Claim free Plus</a></p>
-    <p class="small">The App Store opens and shows the offer. Each code works once, so the first person to claim it gets it.</p>
-  </div>
-  <div id="bad" hidden>
-    <h1>This link is missing its code.</h1>
-    <p class="lede">Scan the code on the back of the piece again.</p>
+    <p style="margin:1.4rem 0 .9rem"><a class="claim" id="claim" href="https://apps.apple.com/redeem?ctx=offercodes&amp;id=6824625025&amp;code=NEIGHBOR">Claim free Plus</a></p>
+    <p class="small">The App Store opens and shows the offer.</p>
   </div>
   <p class="small"><a href="/stash-app/">What is Stash?</a></p>
 </main>
-<script>
-  // The code lives after the #, so it never reaches a server.
-  var code = decodeURIComponent(location.hash.slice(1)).trim().toUpperCase();
-  // Printed one-time codes that now open a shared free code, so the QR keeps working.
-  var SHARED = { TM8HJXAKFTEWR3R4HM: 'NEIGHBOR' };
-  if (SHARED[code]) {
-    code = SHARED[code];
-    document.querySelector('#ok .small').textContent = 'The App Store opens and shows the offer.';
-  }
-  if (/^[A-Z0-9]{8,24}$/.test(code)) {
-    document.getElementById('claim').href = 'https://apps.apple.com/redeem?ctx=offercodes&id=6824625025&code=' + code;
-  } else {
-    document.getElementById('ok').hidden = true;
-    document.getElementById('bad').hidden = false;
-  }
-</script>
+<!-- Every printed QR code opens the shared free code NEIGHBOR, whatever code follows the #. -->
 </body></html>
