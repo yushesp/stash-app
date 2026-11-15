@@ -39,6 +39,12 @@
 <script>
   // The code lives after the #, so it never reaches a server.
   var code = decodeURIComponent(location.hash.slice(1)).trim().toUpperCase();
+  // Printed one-time codes that now open a shared free code, so the QR keeps working.
+  var SHARED = { TM8HJXAKFTEWR3R4HM: 'NEIGHBOR' };
+  if (SHARED[code]) {
+    code = SHARED[code];
+    document.querySelector('#ok .small').textContent = 'The App Store opens and shows the offer.';
+  }
   if (/^[A-Z0-9]{8,24}$/.test(code)) {
     document.getElementById('claim').href = 'https://apps.apple.com/redeem?ctx=offercodes&id=6824625025&code=' + code;
   } else {
